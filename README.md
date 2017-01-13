@@ -43,10 +43,13 @@ During the first attempt at running the model, was able to achieve 98.4% accuray
 
 ![](misc/first_cnn.png?raw=true)
 
+### Cloud ML (TODO)
+ - Train the model on cloud ML to do hyperparameter tuning
+
+
 ### TODO's
-- Rework preparation step to use the TF.learn vocab preprocessing tool. 
-- Prep step should produce many smaller files with languages in proportion to the original set. Currently just random. 
-- visualization of the word embeddings
-- Imvproved cross validation during training
+- Fix deprecation warnings in the python training code from old TFLearn usage
 - Evaluation step on outside data to see if I can achieve similar accuracy. 
-- Hyperparameter tuning
+- Visualization of the word embeddings
+- Imvproved cross validation during training
+- Hyperparameter tuning on CloudML [similar to this repo](https://github.com/ostegm/tensorflow-workshop/tree/master/workshop_sections/mnist_series/cloudml)

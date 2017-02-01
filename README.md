@@ -14,9 +14,10 @@ Layers used in training the model:
 - Finally, a fully connected layer with sigmoid activation. 
 
 The Normalized Confusion Matrix from the CNN + LSTM Architecture
+  
 ![](misc/conf_matrix.png?raw=true)
 
- Demonstrating the plateauing training results from the first Achitecture: 
+Demonstrating the plateauing training results from the first Achitecture: 
 
 ![](misc/first_cnn.png?raw=true)
 

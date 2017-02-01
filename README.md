@@ -1,5 +1,5 @@
 # Predicting Language From Text
-This repo is contains the scripts and notebooks used to train a convolutional neural network (+LSTM) on a corpus of text and predict the language of that text with 99% accuracy. 
+This repo contains the scripts and notebooks used to train a convolutional neural network (+LSTM) on a corpus of text and predict the language of that text with 99% accuracy. 
 
 ### Training
 Initially, I based the neural network on a [WildMl.org blog post](https://github.com/dennybritz/cnn-text-classification-tf) that aims to predict sentiment from movie reviews. The WildML post has references to 2014 [paper by Kim Yoon](https://arxiv.org/abs/1408.5882). I found this to only achieve ~98% acc, so I chose to try out other architectures. The final architecture I settled on was a combination of CNN + LSTM, which achieved 99.7% accuracy on a [held out set of 21k records](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/language-detection/europarl-test.zip) provided by [Startup.ml](https://startup.ml/challenge)

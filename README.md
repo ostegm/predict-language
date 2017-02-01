@@ -1,8 +1,8 @@
 # Predicting Language From Text
 This repo contains the scripts and notebooks used to train a convolutional neural network (+LSTM) on a corpus of text and predict the language of that text with 99% accuracy. 
 
-### Training
-Initially, I based the neural network on a [WildMl.org blog post](https://github.com/dennybritz/cnn-text-classification-tf) that aims to predict sentiment from movie reviews. The WildML post has references to 2014 [paper by Kim Yoon](https://arxiv.org/abs/1408.5882). I found this to only achieve ~98% acc, so I chose to try out other architectures. The final architecture I settled on was a combination of CNN + LSTM, which achieved 99.7% accuracy on a [held out set of 21k records](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/language-detection/europarl-test.zip) provided by [Startup.ml](https://startup.ml/challenge)
+### Training & Architecture
+Initially, I based the neural network on a [WildMl.org blog post](https://github.com/dennybritz/cnn-text-classification-tf) that aims to predict sentiment from movie reviews. The WildML post has references to 2014 [paper by Kim Yoon](https://arxiv.org/abs/1408.5882). I found this to only achieve ~98% acc and 11+ hours to train, so I chose to try out other architectures. The final architecture I settled on was a combination of CNN + LSTM, which achieved 99.7% accuracy on a [held out set of 21k records](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/language-detection/europarl-test.zip) provided by [Startup.ml](https://startup.ml/challenge). Interestingly, the second architecture only required about 58mins to train.
 
 Layers used in training the model: 
 - Embedding layer: generate vector representations of individual words. (+ dropout)
@@ -13,11 +13,12 @@ Layers used in training the model:
 - An LSTM layer
 - Finally, a fully connected layer with sigmoid activation. 
 
-The Normalized Confusion Matrix from the CNN + LSTM Architecture
+### Results
+Overall accuracy on the test set was 99.7%. The Normalized Confusion Matrix from the CNN + LSTM Architecture is shown below, which demonstrates some areas where the model is weaker. In particular, the model has hard time with Finnish and Romanian. This could provide some interesting next steps - pursuing more training data for those two languages, or investigating peculiarities about their structure. 
   
 ![](misc/conf_matrix.png?raw=true)
 
-Demonstrating the plateauing training results from the first Achitecture: 
+Below, is a plot demonstrating the plateauing training results from the first achitecture. The training time was 11+ hours, compared to 58mins for the second architecture of CNN + LSTM: 
 
 ![](misc/first_cnn.png?raw=true)
 
